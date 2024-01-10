@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #table td,
+      th {
+        margin: 0px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="2" id="table"></table>
+  </body>
+  <script>
+    let table = document.getElementById("table");
+    table.innerHTML += `<tr>
+      <th colspan = "7">Bingo</th>
+      </tr>`;
+    for (let i = 1; i <= 5; i++) {
+      table.innerHTML += `<tr>
+          <td class = "cls" onclick="my(this.outerHTML)">${i}</td>
+          <td class = "cls" onclick="my(this.outerHTML)">${i + 5}</td>
+          <td class = "cls" onclick="my(this.outerHTML)">${i + 10}</td>
+          <td class = "cls" onclick="my(this.outerHTML)">${i + 15}</td>
+          <td class = "cls" onclick="my(this.outerHTML)">${i + 20}</td>
+          </tr>`;
+    }
+    function my(values) {
+      let a = values;
+      a.setAttribute("style", "color:red;");
+    }
+    function ak(aks) {
+      console.log(aks);
+    }
+  </script>
+</html>
